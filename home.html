@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Room Kalendar</title>
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="custom.js"></script>
+</head>
+<body>
+<div class="background-image"></div>
+	<div class="header">
+		<span>Welcome to Our New Booking Solution</span>
+	</div>
+
+	<div class = "main">
+		<div class="button" onclick="location.reload()">Home</div>
+		<div id='left' onclick="leftFunction()">
+			<div class="door">
+				203
+			</div>
+		</div>
+		<div id="right" onclick="rightFunction()">
+			<div class="door">
+				205
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="container">
+			<span>
+				<p>Please Send Any Issue or Suggestion</p>
+				<p>(786) 608-5791</p>
+				<p><a href="mailto:karla@rokk3rlabs.com">E-mail Karla</a></p>
+			</span>
+		</div>
+	</footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).on("mouseenter", "#room1", function() {
+	$(".img").remove();
+	$("#right").append("<div class='img' onclick=room('1')></div>");
+	$(".img").css("background-image", "url('room1.jpeg')");
+	$(".img").css("background-position", "center");
+	$(".img").css("background-size", "120% 100%");
+	$(".img").css("opacity", ".7");
+	$("#room1").css("display", "none");
+	$("#room2").css("display", "none");
+	$("#room3").css("display", "none");
+	$("#right").append("<div class='middle' onclick=room('1')><div class='text'>Book your appointment for Education Room</div></div>");
+});
+
+$(document).on("mouseenter", "#room2", function() {
+	$(".img").remove();
+	$("#right").append("<div class='img' onclick=room('2')></div>");
+	$(".img").css("background-image", "url('room2.jpeg')");
+	$(".img").css("background-position", "center");
+	$(".img").css("background-size", "120% 100%");
+	$(".img").css("opacity", ".7");
+	$("#room1").css("display", "none");
+	$("#room2").css("display", "none");
+	$("#room3").css("display", "none");
+	$("#right").append("<div class='middle' onclick=room('2')><div class='text'>Book your appointment for Middle Room</div></div>");
+});
+
+$(document).on("mouseenter", "#room3", function() {
+	$(".img").remove();
+	$("#right").append("<div class='img' onclick=room('3')></div>");
+	$(".img").css("background-image", "url('room3.jpeg')");
+	$(".img").css("background-position", "center");
+	$(".img").css("background-size", "120% 100%");
+	$(".img").css("opacity", ".7");
+	$("#room1").css("display", "none");
+	$("#room2").css("display", "none");
+	$("#room3").css("display", "none");
+	$("#right").append("<div class='middle' onclick=room('3')><div class='text'>Book your appointment for Room with a View</div></div>");
+});
+
+$(document).on("mouseenter", "#room4", function() {
+	$(".img").remove();
+	$("#left").append("<div class='img' onclick=room('4')></div>");
+	$(".img").css("background-image", "url('room4.jpeg')");
+	$(".img").css("background-position", "right");
+	$(".img").css("background-size", "cover");
+	$(".img").css("opacity", ".7");
+	$("#room4").css("display", "none");
+	$("#left").append("<div class='middle' onclick=room('4')><div class='text'>Book your appointment for Board Room</div></div>");
+});
+
+$(document).on("mouseleave", "#left", function() {
+	$("#room4").css("display", "block");
+	$(".img").css("display", "none");
+	$(".middle").remove();
+});
+
+$(document).on("mouseleave", "#right", function() {
+	$(".middle").remove();
+	$(".img").remove();
+	$("#room1").css("display", "block");
+	$("#room2").css("display", "block");
+	$("#room3").css("display", "block");
+});
+</script>
+</html>
